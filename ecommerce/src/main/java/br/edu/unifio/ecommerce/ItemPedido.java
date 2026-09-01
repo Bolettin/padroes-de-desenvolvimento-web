@@ -1,6 +1,7 @@
-package br.edu.unifio.ecommerce.entidades;
+package br.edu.unifio.ecommerce;
 
 import java.math.BigDecimal;
+import br.edu.unifio.ecommerce.entidades.Produto;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,20 +14,21 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class Produto {
+
+public class ItemPedido {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY )
     private Integer id;
 
-    private String nome;
+    private Integer quantidade;
 
-    private String descricao;
-
-    private Short estoque;
-
-    private BigDecimal preco;
+    private BigDecimal valorUnitario;
 
     @ManyToOne
-    private Categoria categoria;
+    private Pedido pedido;
+
+    @ManyToOne
+    private Produto produto;
 
 }

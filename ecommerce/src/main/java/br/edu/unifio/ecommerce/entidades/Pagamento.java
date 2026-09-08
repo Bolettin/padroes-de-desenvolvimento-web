@@ -1,4 +1,4 @@
-package br.edu.unifio.ecommerce;
+package br.edu.unifio.ecommerce.entidades;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
